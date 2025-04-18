@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberPrank 1337 -Discord User To IP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: #0a0a0a;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+        }
+        .input-box {
+            background: #1a1a1a;
+            border: 2px solid #00ff00;
+            padding: 0.5rem;
+            width: 100%;
+            max-width: 300px;
+            color: #00ff00;
+        }
+        .button {
+            background: #00ff00;
+            color: black;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            margin: 0.5rem;
+        }
+        .button:hover {
+            background: #00cc00;
+        }
+        .result {
+            margin-top: 1rem;
+            padding: 0.5rem;
+            background: #1a1a1a;
+            border: 1px solid #00ff00;
+            max-width: 400px;
+        }
+        .glitch {
+            animation: glitch 0.5s infinite alternate;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, -2px); }
+            80% { transform: translate(2px, 2px); }
+            100% { transform: translate(0); }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-3xl md:text-5xl font-bold text-[#00ff00] drop-shadow-[0_0_10px_#00ff00] mb-4">
+        Made by jakexpeep
+    </h1>
+    <p class="text-lg text-[#00cc00] mb-6">
+        Hacker tool fr    </p>
+    <div class="flex flex-col items-center">
+        <input type="text" id="discordInput" placeholder="Enter Discord ID or Username" class="input-box mb-4">
+        <button onclick="resolveIp()" class="button">Resolve IP</button>
+        <button onclick="bootOffline()" class="button" id="bootButton" style="display: none;">Boot Offline</button>
+        <div id="result" class="result text-[#00ff00]"></div>
+    </div>
+    <p class="text-sm text-[#00cc00] mt-4 max-w-md">
+        Disclaimer: Only for eductional purposes only.
+    </p>
+
+    <script>
+        function generateFakeIp() {
+            const octets = [];
+            for (Hlet i = 0; i < 4; i++) {
+                octets.push(Math.floor(Math.random() * 256));
+            }
+            return octets.join('.');
+        }
+
+        function resolveIp() {
+            const input = document.getElementById('discordInput').value.trim();
+            const resultDiv = document.getElementById('result');
+            const bootButton = document.getElementById('bootButton');
+
+            if (!input) {
+                resultDiv.textContent = 'Error: Enter a username or ID, ya n00b!';
+                bootButton.style.display = 'none';
+                return;
+            }
+
+            const fakeIp = generateFakeIp();
+            resultDiv.innerHTML = `Resolved: <span class="font-bold">${input}</span><br>Fake IP: <span class="glitch">${fakeIp}</span>`;
+            bootButton.style.display = 'inline-block';
+        }
+
+        function bootOffline() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<span class="glitch">faggot booted offline
+            document.getElementById('bootButton').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
